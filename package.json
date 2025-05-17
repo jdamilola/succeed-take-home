@@ -1,0 +1,30 @@
+{
+  "name": "succeed-take-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean & rm -rf node_modules",
+    "dev": "cross-env FORCE_COLOR=1 turbo run dev --no-cache --parallel",
+    "lint": "turbo run lint",
+    "start": "turbo run start",
+    "test": "cross-env FORCE_COLOR=1 turbo run test",
+    "typecheck": "turbo run typecheck",
+    "db:seed": "cross-env FORCE_COLOR=1 turbo run db:seed",
+    "db:migrate": "cross-env FORCE_COLOR=1 turbo run db:migrate",
+    "db:generate": "cross-env FORCE_COLOR=1 turbo run db:generate"
+  },
+  "dependencies": {
+    "turbo": "2.5.3"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@succeed/logger",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "source": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "lint": "eslint . --quiet"
+  },
+  "dependencies": {
+    "pino": "9.6.0",
+    "@succeed/eslint": "workspace:*"
+  },
+  "devDependencies": {
+    "pino-pretty": "13.0.0"
+  }
+}
