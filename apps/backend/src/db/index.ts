@@ -3,8 +3,6 @@ import { Pool } from 'pg';
 import logger from '@succeed/logger';
 import * as schema from './schema';
 
-console.log('DATABASE_URL 1', process.env.DATABASE_URL);
-
 // Create PostgreSQL connection pool
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -19,6 +17,10 @@ export const db = drizzle(pool, { schema });
 
 // Initialize database connection
 export const initDatabase = async (): Promise<void> => {
+  // Load environment variables
+  require('dotenv').config();
+  console.log('DATABASE_URL 1', process.env.DATABASE_URL);
+
   try {
     // Test database connection by executing a simple query
     const result = await pool.query('SELECT NOW()');
