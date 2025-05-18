@@ -87,7 +87,7 @@ async function seed() {
       {
         id: userIds.harvardStudent1,
         schoolId: schoolIds.harvard,
-        email: 'student1@harvard.edu',
+        email: 'student@harvard.edu',
         passwordHash: studentPasswordHash,
         firstName: 'John',
         lastName: 'Doe',
