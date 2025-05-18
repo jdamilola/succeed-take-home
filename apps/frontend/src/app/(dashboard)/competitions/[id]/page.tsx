@@ -262,7 +262,7 @@ export default function CompetitionDetailPage() {
                         </p>
                         <p className="mt-3 text-sm md:mt-0 md:ml-6">
                           <Link
-                            href={`/competitions/${competition.id}/submit`}
+                            href="#"
                             className="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600"
                           >
                             Submit your entry <span aria-hidden="true">&rarr;</span>
