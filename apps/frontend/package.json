@@ -1,12 +1,12 @@
 {
-  "name": "front-end",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3002",
     "lint": "next lint --quiet",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
