@@ -112,6 +112,7 @@ The application uses the following main data entities:
 
 ## Development Workflows
 
+- **Run app in development**: `pnpm run dev`
 - **Building for production**: `pnpm run build`
 - **Running tests**: `pnpm run test`
 - **Type checking**: `pnpm run typecheck`
