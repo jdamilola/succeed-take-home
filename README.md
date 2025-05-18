@@ -43,7 +43,7 @@ succeed-take-home/
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jdamilola/succeed-take-home
 cd succeed-take-home
 ```
 
@@ -106,7 +106,7 @@ The application uses the following main data entities:
 
 - **Schools**: Represents educational institutions (tenants)
 - **Users**: School administrators and students
-- **Competitions**: Events created by administrators
+- **Competitions**: Events created by school administrators
 - **Competition Access**: Controls which schools can access restricted competitions
 - **Competition Participants**: Tracks which users are participating in competitions
 
