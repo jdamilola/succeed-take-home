@@ -6,6 +6,8 @@ import logger from '@succeed/logger';
  * Apply database migrations
  */
 export const applyMigrations = async (): Promise<void> => {
+  console.log('DATABASE_URL 2', process.env.DATABASE_URL);
+
   try {
     logger.info('Applying database migrations...');
     await migrate(db, { migrationsFolder: './src/db/migrations' });
