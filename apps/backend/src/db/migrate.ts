@@ -7,6 +7,7 @@ import logger from '@succeed/logger';
  */
 export const applyMigrations = async (): Promise<void> => {
   console.log('DATABASE_URL 2', process.env.DATABASE_URL);
+  console.log('DATABASE_URL 3', process.env);
 
   try {
     logger.info('Applying database migrations...');
