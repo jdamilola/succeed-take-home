@@ -9,7 +9,6 @@
     "dev": "cross-env FORCE_COLOR=1 turbo run dev --no-cache --parallel",
     "lint": "turbo run lint",
     "start": "turbo run start",
-    "start:server": "cross-env FORCE_COLOR=1 turbo run start --filter=backend",
     "test": "cross-env FORCE_COLOR=1 turbo run test",
     "typecheck": "turbo run typecheck",
     "db:seed": "cross-env FORCE_COLOR=1 turbo run db:seed",
@@ -20,7 +19,6 @@
     "turbo": "2.5.3"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.7.10",
     "cross-env": "7.0.3"
   },
   "engines": {
