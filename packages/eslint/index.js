@@ -1,60 +1,32 @@
-module.exports = {
-  root: true,
-  ignorePatterns: ['node_modules', 'dist', 'build', 'public', '.next'],
-  extends: [
-    'next/core-web-vitals',
-    'airbnb',
-    'turbo',
-    'plugin:prettier/recommended',
-    'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-  ],
-  plugins: [
-    '@typescript-eslint',
-    'unused-imports',
-    'prettier',
-    'simple-import-sort',
-  ],
-  parser: '@typescript-eslint/parser',
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': 'off',
-    'simple-import-sort/exports': 'error',
-    '@next/next/no-html-link-for-pages': 'off',
-    semi: ['error', 'never'],
-    quotes: ['error', 'single', { avoidEscape: true }],
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: false,
-        trailingComma: 'es5',
-        tabWidth: 2,
-        endOfLine: 'lf',
-      },
-    ],
-    'padding-line-between-statements': [
-      'error',
-      {
-        blankLine: 'always',
-        prev: '*',
-        next: [
-          'multiline-const',
-          'multiline-expression',
-          'block',
-          'function',
-          'if',
-          'block-like',
-          'return',
-        ],
-      },
-    ],
-  },
-  settings: {
-    react: {
-      version: '18.2.2',
+const js = require("@eslint/js");
+const eslintConfigPrettier = require("eslint-config-prettier");
+const turboPlugin = require("eslint-plugin-turbo");
+const tseslint = require("typescript-eslint");
+const onlyWarn = require("eslint-plugin-only-warn");
+
+/**
+ * A shared ESLint configuration for the repository.
+ *
+ * @type {import("eslint").Linter.Config}
+ * */
+module.exports = [
+  js.configs.recommended,
+  eslintConfigPrettier,
+  ...tseslint.configs.recommended,
+  {
+    plugins: {
+      turbo: turboPlugin,
+    },
+    rules: {
+      "turbo/no-undeclared-env-vars": "warn",
     },
   },
-}
+  {
+    plugins: {
+      onlyWarn,
+    },
+  },
+  {
+    ignores: ["dist/**"],
+  },
+];
