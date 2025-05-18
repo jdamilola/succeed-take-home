@@ -6,11 +6,6 @@ import logger from '@succeed/logger';
  * Apply database migrations
  */
 export const applyMigrations = async (): Promise<void> => {
-  // Load environment variables
-  require('dotenv').config();
-
-  console.log('DATABASE_URL 2', process.env.DATABASE_URL);
-
   try {
     logger.info('Applying database migrations...');
     await migrate(db, { migrationsFolder: './src/db/migrations' });
@@ -20,21 +15,3 @@ export const applyMigrations = async (): Promise<void> => {
     throw error;
   }
 };
-
-/**
- * Execute this file directly to run migrations
- */
-if (require.main === module) {
-  // Load environment variables
-  require('dotenv').config();
-  
-  applyMigrations()
-    .then(() => {
-      logger.info('Database migration completed');
-      process.exit(0);
-    })
-    .catch((error) => {
-      logger.error(`Database migration failed: ${error}`);
-      process.exit(1);
-    });
-}
